@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="UTF-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+	 <header id="header" class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">热门新番</h1>
+	    </header>
+	    <script>
+	      mui.init({
+      		swipeBack:true, //Boolean(默认false)启用右滑关闭功能
+      		statusBarBackground: '#f7f7f7', //设置状态栏颜色,仅iOS可用
+      		//手势配置
+ 	        gestureConfig:{
+	          doubletap:true
+            },
+            //子页面
+	        subpages: [{
+		      id:'list',
+		      url:'hotFan-sub.html',
+		      styles:{
+		      	top:"45px",
+		      	bottom:0
+		      }
+	        }]
+      	});
+	    </script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    
+</head>
+<body>
+	<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable">
+			<!--侧滑菜单部分-->
+			<aside id="offCanvasSide" class="mui-off-canvas-left" style="background: #fff;">
+				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<div class="content">
+							<div class="img">
+								<img src="images/logo.png" alt="logo" />
+							</div>
+						</div>
+						<ul class="mui-table-view  mui-table-view-chevron" id="slideItem">
+							<li class="mui-table-view-cell" id="slide1">
+								<a class="mui-navigate-right">
+									一周更新
+								</a>
+							</li>
+							<li class="mui-table-view-cell" id="slide2">
+								<a class="mui-navigate-right">
+									最新更新
+								</a>
+							</li>
+							<li class="mui-table-view-cell" id="slide3">
+								<a class="mui-navigate-right">
+									热门推荐
+								</a>
+							</li>
+							<li class="mui-table-view-cell" id="slide4">
+								<a class="mui-navigate-right">
+									连载动漫
+								</a>
+							</li>
+							<li class="mui-table-view-cell" id="slide5">
+								<a class="mui-navigate-right">
+									完结动漫
+								</a>
+							</li>
+							<li class="mui-table-view-cell" id="slide6">
+								<a class="mui-navigate-right">
+									新闻列表
+								</a>
+							</li>
+							<li class="mui-table-view-cell" id="slide7">
+								<a class="mui-navigate-right">
+									榜单资讯
+								</a>
+							</li>
+							<li class="mui-table-view-cell" id="slide8">
+								<a class="mui-navigate-right">
+									专题列表
+								</a>
+							</li>
+							<li class="mui-table-view-cell" id="slide9">
+								<a class="mui-navigate-right">
+									关于
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+			<!--主界面部分-->
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav">
+					 
+					<a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
+					<a class="mui-icon mui-icon-search mui-pull-right" id="weekclass"></a>
+					<a class="mui-title mui-input-row mui-search" id="weekclass1" style="display: none;">
+                        <input type="search" placeholder="HTML5">
+                    </a>
+					<h1 class="mui-title">超超动漫城</h1>
+				</header>
+				
+			<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper" style="margin-top: 44px;">
+			<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--轮播图-->
+		     <div  class="mui-content">
+				<div id="slider" class="mui-slider">
+					<div class="mui-slider-group mui-slider-loop">
+						<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<a href="#">
+								<img src="images/20150801115445357.jpg">
+								<p class="mui-slider-title">静静看这世界</p>
+							</a>
+						</div>
+						<div class="mui-slider-item">
+							<a href="#">
+								<img src="images/20160118033020963.jpg">
+								<p class="mui-slider-title">幸福就是可以在一起</p>
+							</a>
+						</div>
+						<div class="mui-slider-item">
+							<a href="#">
+								<img src="images/20160615104904601.jpg">
+								<p class="mui-slider-title">想要一间这样的木屋，静静的喝咖啡</p>
+							</a>
+						</div>
+						<div class="mui-slider-item">
+							<a href="#">
+								<img src="images/20160707100916428.jpg">
+								<p class="mui-slider-title">Color of SIP CBD</p>
+							</a>
+						</div>
+						<div class="mui-slider-item">
+							<a href="#">
+								<img src="images/20150801115445357.jpg">
+								<p class="mui-slider-title">静静看这世界</p>
+							</a>
+						</div>
+						<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+						<div class="mui-slider-item mui-slider-item-duplicate">
+							<a href="#">
+								<img src="images/20160118033020963.jpg">
+								<p class="mui-slider-title">幸福就是可以一起睡觉</p>
+							</a>	
+						</div>
+					</div>
+					<div class="mui-slider-indicator mui-text-right">
+						<div class="mui-indicator mui-active"></div>
+						<div class="mui-indicator"></div>
+						<div class="mui-indicator"></div>
+						<div class="mui-indicator"></div>
+					</div>
+				</div>
+			</div>
+	   
+	        <!--选项卡-->
+	        <div class="mui-content">
+				<div style="padding: 10px 10px;">
+					<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-negative">
+						<a class="mui-control-item mui-active" href="#item1">
+					      	新增连载
+						</a>
+						<a class="mui-control-item" href="#item2">
+					     	新增完结
+						</a>
+						<a class="mui-control-item" href="#item3">
+					    	推荐连载
+						</a>
+				  		<a class="mui-control-item" href="#item4">
+					    	推荐完结
+						</a>
+					</div>
+				</div>
+				<div>
+					<div id="item1" class="mui-control-content mui-active">
+						<ul class="mui-table-view mui-grid-view mui-grid-9 listItem">
+					        <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6 mui-li" >
+					            <a href="">
+					                <img class="mui-media-object" src="images/1.jpg">
+					                <p class="mui-slider-title">幸福就是可以一起吃饭</p>
+					            </a>
+					            <p>仓鼠管家</p>
+					        </li>
+					        <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-xs-6">
+					            <a href="">
+					                <img class="mui-media-object" src="images/1.jpg">
+					                <p class="mui-slider-title">幸福就是可以一起听歌</p>
+					            </a>
+					            <p>仓鼠管家</p>
+					        </li>
+					       <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-xs-6">
+					            <a href="">
+					                <img class="mui-media-object" src="images/1.jpg">
+					                <p class="mui-slider-title">幸福就是可以一起上学</p>
+					            </a>
+					            <p>仓鼠管家</p>
+					        </li>
+					      <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-xs-6">
+					            <a href="">
+					                <img class="mui-media-object" src="images/1.jpg">
+					                <p class="mui-slider-title">幸福就是可以一起睡觉</p>
+					            </a>
+					            <p>仓鼠管家</p>
+					        </li>
+					    </ul> 
+					</div>
+					<div id="item2" class="mui-control-content">
+						 <ul class="mui-table-view mui-grid-view mui-grid-9 listItem">
+					         <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6 mui-li" >
+					            <a href="">
+					                <img class="mui-media-object" src="images/1.jpg">
+					                <p class="mui-slider-title">幸福就是可以一起吃饭</p>
+					            </a>
+					            <p>仓鼠管家</p>
+					        </li>
+					        <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-xs-6">
+					            <a href="">
+					                <img class="mui-media-object" src="images/1.jpg">
+					                <p class="mui-slider-title">幸福就是可以一起听歌</p>
+					            </a>
+					            <p>仓鼠管家</p>
+					        </li>
+					       <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-xs-6">
+					            <a href="">
+					                <img class="mui-media-object" src="images/1.jpg">
+					                <p class="mui-slider-title">幸福就是可以一起上学</p>
+					            </a>
+					            <p>仓鼠管家</p>
+					        </li>
+					      <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-xs-6">
+					            <a href="">
+					                <img class="mui-media-object" src="images/1.jpg">
+					                <p class="mui-slider-title">幸福就是可以一起睡觉</p>
+					            </a>
+					            <p>仓鼠管家</p>
+					        </li>
+					    </ul> 
+					</div>
+					<div id="item3" class="mui-control-content listItem">
+						  <ul class="mui-table-view mui-grid-view mui-grid-9">
+					         <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6 mui-li" >
+					            <a href="">
+					                <img class="mui-media-object" src="images/1.jpg">
+					                <p class="mui-slider-title">幸福就是可以一起吃饭</p>
+					            </a>
+					            <p>仓鼠管家</p>
+					        </li>
+					        <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-xs-6">
+					            <a href="">
+					                <img class="mui-media-object" src="images/1.jpg">
+					                <p class="mui-slider-title">幸福就是可以一起听歌</p>
+					            </a>
+					            <p>仓鼠管家</p>
+					        </li>
+					       <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-xs-6">
+					            <a href="">
+					                <img class="mui-media-object" src="images/1.jpg">
+					                <p class="mui-slider-title">幸福就是可以一起上学</p>
+					            </a>
+					            <p>仓鼠管家</p>
+					        </li>
+					      <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-xs-6">
+					            <a href="">
+					                <img class="mui-media-object" src="images/1.jpg">
+					                <p class="mui-slider-title">幸福就是可以一起睡觉</p>
+					            </a>
+					            <p>仓鼠管家</p>
+					        </li>
+					    </ul> 
+					</div>
+					<div id="item4" class="mui-control-content">
+						<ul class="mui-table-view mui-grid-view mui-grid-9 listItem">
+					         <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6 mui-li" >
+					            <a href="">
+					                <img class="mui-media-object" src="images/1.jpg">
+					                <p class="mui-slider-title">幸福就是可以一起吃饭</p>
+					            </a>
+					            <p>仓鼠管家</p>
+					        </li>
+					        <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-xs-6">
+					            <a href="">
+					                <img class="mui-media-object" src="images/1.jpg">
+					                <p class="mui-slider-title">幸福就是可以一起听歌</p>
+					            </a>
+					            <p>仓鼠管家</p>
+					        </li>
+					       <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-xs-6">
+					            <a href="">
+					                <img class="mui-media-object" src="images/1.jpg">
+					                <p class="mui-slider-title">幸福就是可以一起上学</p>
+					            </a>
+					            <p>仓鼠管家</p>
+					        </li>
+					      <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-xs-6">
+					            <a href="">
+					                <img class="mui-media-object" src="images/1.jpg">
+					                <p class="mui-slider-title">幸福就是可以一起睡觉</p>
+					            </a>
+					            <p>仓鼠管家</p>
+					        </li>
+					    </ul> 
+					</div>
+				</div>
+			</div>
+				</div>
+					</div>
+					<!-- off-canvas backdrop -->
+					<div class="mui-off-canvas-backdrop"></div>
+				</div>
+			</div>	
+	<script type="text/javascript" charset="utf-8">
+	var gallery = mui('.mui-slider');
+		gallery.slider({
+		  interval:1000//自动轮播周期，若为0则不自动播放，默认为0；
+		});
+		mui("#refreshContainer").pullRefresh();
+			mui.init({
+				swipeBack:true, //Boolean(默认false)启用右滑关闭功能
+	      		statusBarBackground: '#f7f7f7', //设置状态栏颜色,仅iOS可用
+	      		//手势配置
+	 	        gestureConfig:{
+		          doubletap:true
+	            },
+				pullRefresh:{
+					container:"#refreshContaier",
+					down:{
+						height:50,
+						auto:true,
+						contentrefresh:"正在刷新...",
+						callback:function(){
+							alert("刷新完成!");
+							mui("#refreshContainer").pullRefresh().endPulldownToRefresh();
+						}
+					}
+				}
+			});
+	    mui('.listItem').on('tap','a',function(a){
+	    	a.preventDefault();
+	    	mui.openWindow({
+	    		url:"downloadIndex.html",
+	    		id:'download'
+	    	})
+	    });
+	    
+			function addEvent(url){
+				mui.openWindow({
+				  	url:url,
+				  	id:url,
+				  	createNew:false,
+				  	show:{
+				  		autoShow:true,
+				  		aniShow:'slide-in-right',
+				  		duration:100
+				  	},
+				  	waiting:{
+				  		autoShow:true,
+				  		title:"正在加载..."
+				  	}
+				})
+			}
+			mui("#slideItem").on('tap','.mui-navigate-right',function(a){
+			    var id=a.path[1].id;
+			   switch (id){
+					case 'slide1':
+					addEvent('updateWeek.html');
+					break;
+					case 'slide2':
+					addEvent('newUpdate.html');
+					break;
+					case 'slide3':
+					addEvent('hotFan.html');
+					break;
+					case 'slide4':
+					addEvent('serialize.html');
+					break;
+					case 'slide5':
+					addEvent('updateWeek.html');
+					break;
+					case 'slide6':
+					addEvent('updateWeek.html');
+					break;
+					case 'slide7':
+					addEvent('updateWeek.html');
+					break;
+					case 'slide8':
+					addEvent('updateWeek.html');
+					break;
+					case 'slide9':
+					addEvent('updateWeek.html');
+					break;
+					
+				}
+		});
+		
+//		document.getElementById("weekclass").addEventListener("tap",function () {
+//		  document.getElementById('weekclass1').style.display = "inline";
+//		});
+			//触发submit按钮的点击事件
+			//mui.trigger(btn,'tap');	n
+    </script>
+</body>
+</html>

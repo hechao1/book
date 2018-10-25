@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		        <div class="mui-content">
+						<div style="padding: 10px 10px;">
+							<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-negative">
+								<a class="mui-control-item mui-active" href="#item11">
+							      全部<span class="mui-icon mui-icon-arrowdown"></span>
+						</a>
+								<a class="mui-control-item" href="#item22">
+						                   全部 <span class="mui-icon mui-icon-arrowdown"></span>
+						</a>
+						<a class="mui-control-item" href="#item33">
+							    最新播放<span class="mui-icon mui-icon-arrowdown"></span>
+						</a>
+							</div>
+						</div>
+		        </div>
+		 				<div id="item11" class="mui-control-content mui-active">
+							1
+						</div>
+						<div id="item22" class="mui-control-content">
+							2
+						</div>
+						<div id="item33" class="mui-control-content">
+							 3
+						</div>
+			<div id="a" class="mui-popover mui-popover-action mui-popover-bottom">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#" style="color: #FF3B30;">删除信息</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#a"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+		<div id="b" class="mui-popover mui-popover-action mui-popover-bottom">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#" style="color: #FF3B30;">删除信息</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#a"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+		<div id="c" class="mui-popover mui-popover-action mui-popover-bottom">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#" style="color: #FF3B30;">删除信息</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#a"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			/*mui('body').on('shown', '.mui-popover', function(e) {
+			//console.log('shown', e.detail.id);//detail为当前popover元素
+			
+		});
+		   mui('body').on('hidden', '.mui-popover', function(e) {
+			//console.log('hidden', e.detail.id);//detail为当前popover元素
+		});	*/
+		mui('body').on('tap', '.mui-popover-action li>a', function() {
+			var a = this,
+				parent;
+			//根据点击按钮，反推当前是哪个actionsheet
+			for (parent = a.parentNode; parent != document.body; parent = parent.parentNode) {
+				if (parent.classList.contains('mui-popover-action')) {
+					break;
+				}
+			}
+			//关闭actionsheet
+			mui('#' + parent.id).popover('toggle');
+		})
+		
+		mui('body').on('tap','#segmentedControl>a',function(e){
+			var src=e.srcElement.href;
+			var href=src.split('#')[1],href1;
+			switch(href){
+			case 'item11':
+			href1='a';
+			break;
+			case 'item22':
+			href1='b';
+			break;
+			case 'item33':
+			href1='c';
+			break;
+			}
+			e.srcElement.href=src.split("#")[0]+"#"+href1;
+			e.srcElement.href=src.split("#")[0]+"#"+href;
+		})
+		</script>				
+	</body>
+   
+</html>
